@@ -1,0 +1,10 @@
+########## Creating test environment #########
+conda create --name test_tfenv --clone tfenv
+
+### EC2 Setup (AWS)
+########## Libraries to be setup #######
+sudo apt-get update
+sudo apt-get install python3
+sudo apt-get install python3-pip
+pip3 install --upgrade  pip
+pip3 install -r requirements_AWS.txt 

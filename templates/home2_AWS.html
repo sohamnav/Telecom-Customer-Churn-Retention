@@ -1,0 +1,267 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+	<body background="https://img.freepik.com/free-photo/abstract-luxury-blur-grey-color-gradient-used-as-background-studio-wall-display-your-products_1258-54649.jpg">
+	<title>Telecom Customer Churn Prediction</title>
+	<table align="center">
+	<tr>
+	<td>
+	<img src="https://media-exp1.licdn.com/dms/image/C4E0BAQGS7wkAUjAXQw/company-logo_200_200/0/1633615259963?e=2147483647&v=beta&t=Q2MamQnMajNhPERe9fSpvaOfpwpnYVpkk_cEVv6ZGwU"/>
+	</td>
+	<td align="center">
+	<h1>Institute for Advanced Computing and Software Development</h1>
+	<h2>Telecom Customer Churn Prediction</h2>
+	</td>
+	<td>
+	<img src="https://media-exp1.licdn.com/dms/image/C4E0BAQH0pV14FxzqwQ/company-logo_200_200/0/1624685506949?e=2147483647&v=beta&t=L_r6P-Xusi1OYIbb2JSgE_HJozY5SWy8lQCfh-5tRsI"/>
+	</td>
+	</tr>
+	</table>
+	<div class="container">
+	<div class="row">
+	<form action="{{ url_for('predict')}}" method="POST">
+	<div class="col-sm-15">
+		<Table align = "center">
+
+			<tr><div class="form-group  purple-border">
+				<td><label for="comment"><b><h3>Gender</h3></b></label></td>
+					 	<td><select name = "query1" id="query1" >
+            				<option value = "Female">Female</option>
+            				<option value = "Male">Male</option>
+         					</select></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				  <td><label for="comment"><b><h3>Age</h3></b></label></td>
+				  <td><textarea class="form-control" rows="1" id="query2" name="query2" rows="1" cols="5" autofocus></textarea></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				<td><label for="comment"><b><h3>Married</h3></b></label></td>
+						<td><select name = "query3" id="query3">
+            				<option value = "Yes">Yes</option>
+            				<option value = "No">No</option>
+         					</select></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				  <td><label for="comment"><b><h3>No. of Dependents</h3></b></label></td>
+				  <td><textarea class="form-control" rows="1" id="query4" name="query4" rows="1" cols="5" autofocus></textarea></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				  <td><label for="comment"><b><h3>No. of Referals</h3></b></label></td>
+				  <td><textarea class="form-control" rows="1" id="query5" name="query5" rows="1" cols="5" autofocus></textarea></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				  <td><label for="comment"><b><h3>Tenure in Months</h3></b></label></td>
+				  <td><textarea class="form-control" rows="1" id="query6" name="query6" rows="1" cols="5" autofocus></textarea></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				<td><label for="comment"><b><h3>Offers</h3></b></label></td>
+						<td><select name = "query7" id="query7">
+            				<option value = "Offer A">Offer A</option>
+            				<option value = "Offer B">Offer B</option>
+						<option value = "Offer C">Offer C</option>
+            				<option value = "Offer D">Offer D</option>
+						<option value = "Offer E">Offer E</option>
+            				<option value = "None">None</option>
+         					</select></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				<td><label for="comment"><b><h3>Phone Service</h3></b></label></td>
+						<td><select name = "query8" id="query8" >
+            				<option value = "Yes">Yes</option>
+            				<option value = "No">No</option>
+         					</select></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				  <td><label for="comment"><b><h3>Avg Monthly Long Dist. Charges</h3></b></label></td>
+				  <td><textarea class="form-control" rows="1" id="query9" name="query9" rows="1" cols="5" autofocus></textarea></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				<td><label for="comment"><b><h3>Multiple lines</h3></b></label></td>
+						<td><select name = "query10" id="query10">
+            				<option value = "Yes">Yes</option>
+            				<option value = "No">No</option>
+						<option value = "No phone service">No phone service</option>
+         					</select></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				<td><label for="comment"><b><h3>Internet Service</h3></b></label></td>
+						<td><select name = "query11" id="query11" >
+            				<option value = "Yes">Yes</option>
+            				<option value = "No">No</option>
+         					</select></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				<td><label for="comment"><b><h3>Internet Type</h3></b></label></td>
+						<td><select name = "query12" id="query12" >
+            				<option value = "Cable">Cable</option>
+            				<option value = "Fiber Optic">Fiber Optic</option>
+						<option value = "DSL">DSL</option>
+            				<option value = "No internet service">No internet service</option>
+         					</select></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				  <td><label for="comment"><b><h3>Avg. Monthly GB Download</h3></b></label></td>
+				  <td><textarea class="form-control" rows="1" id="query13" name="query13" rows="1" cols="5" autofocus></textarea></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				<td><label for="comment"><b><h3>Online Security</h3></b></label></td>
+						<td><select name = "query14" id="query14">
+            				<option value = "Yes">Yes</option>
+            				<option value = "No">No</option>
+						<option value = "No internet service">No internet service</option>
+         					</select></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				<td><label for="comment"><b><h3>Online Backup</h3></b></label></td>
+						<td><select name = "query15" id="query15">
+            				<option value = "Yes">Yes</option>
+            				<option value = "No">No</option>
+						<option value = "No internet service">No internet service</option>
+         					</select></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				<td><label for="comment"><b><h3>Device Protection Plan</h3></b></label></td>
+						<td><select name = "query16" id="query16" >
+            				<option value = "Yes">Yes</option>
+            				<option value = "No">No</option>
+						<option value = "No internet service">No internet service</option>
+         					</select></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				<td><label for="comment"><b><h3>Premium Tech Support</h3></b></label></td>
+						<td><select name = "query17" id="query17">
+            				<option value = "Yes">Yes</option>
+            				<option value = "No">No</option>
+						<option value = "No internet service">No internet service</option>
+         					</select></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				<td><label for="comment"><b><h3>Streaming TV</h3></b></label></td>
+						<td><select name = "query18" id="query18">
+            				<option value = "Yes">Yes</option>
+            				<option value = "No">No</option>
+						<option value = "No internet service">No internet service</option>
+         					</select></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				<td><label for="comment"><b><h3>Streaming Movies</h3></b></label></td>
+						<td><select name = "query19" id="query19">
+            				<option value = "Yes">Yes</option>
+            				<option value = "No">No</option>
+						<option value = "No internet service">No internet service</option>
+         					</select></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				<td><label for="comment"><b><h3>Streaming Music</h3></b></label></td>
+						<td><select name = "query20" id="query20" >
+            				<option value = "Yes">Yes</option>
+            				<option value = "No">No</option>
+						<option value = "No internet service">No internet service</option>
+         					</select></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				<td><label for="comment"><b><h3>Unlimited Data</h3></b></label></td>
+						<td><select name = "query21" id="query21">
+            				<option value = "Yes">Yes</option>
+            				<option value = "No">No</option>
+						<option value = "No internet service">No internet service</option>
+         					</select></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				<td><label for="comment"><b><h3>Contract</h3></b></label></td>
+						<td><select name = "query22" id="query22">
+            				<option value = "Month-to-Month">Month-to-Month</option>
+            				<option value = "One Year">One Year</option>
+						<option value = "Two Year">Two Year</option>
+         					</select></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				<td><label for="comment"><b><h3>Paperless Billing</h3></b></label></td>
+						<td><select name = "query23" id="query23">
+            				<option value = "Yes">Yes</option>
+            				<option value = "No">No</option>
+         					</select></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				<td><label for="comment"><b><h3>Payment Method</h3></b></label></td>
+						<td><select name = "query24" id="query24">
+            				<option value = "Credit Card">Credit Card</option>
+            				<option value = "Bank Withdrawal">Bank Withdrawal</option>
+						<option value = "Mailed Check">Mailed Check</option>
+         					</select></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				  <td><label for="comment"><b><h3>Monthly Charges</h3></b></label></td>
+				  <td><textarea class="form-control" rows="1" id="query25" name="query25" rows="1" cols="5" autofocus></textarea></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				  <td><label for="comment"><b><h3>Total Charges</h3></b></label></td>
+				  <td><textarea class="form-control" rows="1" id="query26" name="query26" rows="1" cols="5" autofocus></textarea></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				  <td><label for="comment"><b><h3>Total Extra Data Charges</h3></b></label></td>
+				  <td><textarea class="form-control" rows="1" id="query28" name="query28" rows="1" cols="5" autofocus></textarea></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				  <td><label for="comment"><b><h3>Total Long Dist. Charges</h3></b></label></td>
+				  <td><textarea class="form-control" rows="1" id="query29" name="query29" rows="1" cols="5" autofocus></textarea></td>
+			</div></tr>
+
+			<tr><div class="form-group  purple-border">
+				  <td><label for="comment"><b><h3>Total Revenue</h3></b></label></td>
+				  <td><textarea class="form-control" rows="1" id="query30" name="query30" rows="1" cols="5" autofocus></textarea></td>
+			</div></tr>
+
+
+			<tr><div class="col-sm-3">
+			<td><button type="submit" class="btn btn-primary" name="Submit">SUBMIT</button></td>
+			</div></tr>
+
+		  </form>
+		  </div>
+
+		<div class="row">
+			<div class="col-sm-40">
+			<tr><div class="form-group  purple-border">
+				<td><label for="comment"><b><h3>Results</h3></b></label></td>
+				<td><textarea class="form-control" rows="1" id="comment" name="query6" rows="1" cols="40" autofocus>{{output1}}</textarea></td>
+			</div></tr>
+			<tr><div class="form-group  purple-border">
+				<td><label for="comment"><b><h3>Chances</h3></b></label></td>
+				<td><textarea class="form-control" rows="1" id="comment" name="query7" rows="1" cols="40" autofocus>{{output2}}</textarea></td>
+			</div></tr>
+		</div></tr>
+	</div></tr>
+   </body>
+</html>
