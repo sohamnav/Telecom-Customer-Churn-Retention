@@ -1,2 +1,5 @@
-# Telecom
-Telecom churn prediction
+# Abstract
+With the enormous increase in the number of customers using telephone services, the marketing division for a telco company wants to attract more new customers and avoid contract termination from existing customers (churn rate). For the telco company to expand its clientele, its growth rate (number of new customers) must exceed its churn rate (number of customers existing). Some of the factors that caused existing customers to leave their telco companies are better price offers, faster internet services, and a more secure online experience from other companies.
+A high churn rate will adversely affect a company’s profits and impede growth. Our churn prediction would be able to provide clarity to the telco company on how well it is retaining its existing customers and understand what are the underlying reasons that are causing existing customers to terminate their contract (high churn rate).
+## Objective
+The aim is to build a classification model by use of machine learning algorithm and python. We will classify the churners and non-churners through prediction by use of ensemble learning technique and other algorithms for comparison and bring best optimal solution for the prediction so that it will be easier to take further business decisions to the stakeholders and avoid credit loss to the company.
